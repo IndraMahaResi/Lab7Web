@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # CodeIgniter 4 Framework
 
 ## What is CodeIgniter?
@@ -58,3 +59,7 @@ Additionally, make sure that the following extensions are enabled in your PHP:
 - json (enabled by default - don't turn it off)
 - [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
 - [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+=======
+# Lab7Web
+Tugas Praktikum Pemrogaman Web2 
+>>>>>>> f83c8fd3cc803144ad2df9967199433ed2f9255c
