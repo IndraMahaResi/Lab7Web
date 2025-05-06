@@ -1,65 +1,64 @@
-<<<<<<< HEAD
-# CodeIgniter 4 Framework
+# 📘 Dokumentasi Project CodeIgniter 4 - Lab 11
 
-## What is CodeIgniter?
+## 🙋‍♂️ Identitas
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+- **Nama:** Indra Maha Resi  
+- **NIM:** [312310044]  
+- **Kelas:** [TI.23.C1]  
+- **Nama Project:** PRAKTIKUM WEB2 
 
-This repository holds the distributable version of the framework.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+---
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+## 📁 Deskripsi Singkat
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+Proyek ini dibuat untuk  memenuhi tugas Praktikum Web2
 
-## Important Change with index.php
+---
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+## 📸 Dokumentasi Langkah-langkah
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+> Semua screenshot disimpan dalam folder `Dokumentasi/` di dalam proyek.
 
-**Please** read the user guide for a better explanation of how CI4 works!
+---
 
-## Repository Management
+### 🧱 Praktikum 1: Setup Project CodeIgniter 4
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+- Download dan ekstrak CodeIgniter 4 ke dalam folder `htdocs/lab11_ci/ci4`.
+- Jalankan perintah berikut di terminal:
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+```bash
+php spark serve
+```
+![Ekstrak CI4](Dokumentasi/codeigniter4.png)
 
-## Contributing
 
-We welcome contributions from the community.
+- Menjalankan Xampp
+  
+  ![Menjalankan Xampp](Dokumentasi/xampp.png)
 
-Please read the [*Contributing to CodeIgniter*](https://github.com/codeigniter4/CodeIgniter4/blob/develop/CONTRIBUTING.md) section in the development repository.
+- CodeIgniter 4 berhasil di jalankan
 
-## Server Requirements
+  ![CodeIgniter Running](Dokumentasi/wellcome-page.png)
 
-PHP version 8.1 or higher is required, with the following extensions installed:
+- Membuat .env untuk melihat eror mode Development
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+  ![CodeIgniter Running](Dokumentasi/eror-page.png)
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
+- Membuat Controller (Contoh: About)
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+   ![About Controller Test](Dokumentasi/about-page.png)
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
-=======
-# Lab7Web
-Tugas Praktikum Pemrogaman Web2 
->>>>>>> f83c8fd3cc803144ad2df9967199433ed2f9255c
+- Membuat dan mengecek Routes
+  dengan menjalan kan :
+  ```bash
+  php spark routes
+  ```
+ ![List Routes yang sudah dibuat ](Dokumentasi/Routes.png)
+ 
+- Membuat Autoroutes dan membuat Controllernya (contoh setelah autoroutes)
+
+  ![List Routes yang sudah dibuat ](Dokumentasi/tos-page.png)
+  
+- Menambahkan Style.css
+
+  ![Page ABout setelah CSS ](Dokumentasi/about-css.png)
