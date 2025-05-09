@@ -75,10 +75,6 @@ php spark serve
 
 ![Membuat Page untuk artikel ](Dokumentasi/page-artikel.png)
 
-- Menambahkan Page detail Artikel
-
-![Membuat Page detail untuk artikel ](Dokumentasi/page-detail-artikel.png)
-
 - Menambahkan Page Isi Artikel
 
 ![Membuat Page Isi untuk artikel ](Dokumentasi/page-isi-artikel.png)
@@ -91,11 +87,11 @@ php spark serve
 
 ![Membuat Page Admin untuk artikel ](Dokumentasi/page-admin-artikel.png)
 
-- Menambahkan Page detail Artikel
+- Menambahkan Page edit Artikel
 
 ![Membuat Page edit untuk artikel ](Dokumentasi/page-edit-artikel.png)
 
-- Menambahkan Page detail Artikel
+- Menambahkan Page tambah/add Artikel
 
 ![Membuat Page tambah untuk artikel ](Dokumentasi/page-artikel.png)
 =======
