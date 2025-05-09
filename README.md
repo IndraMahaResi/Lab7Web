@@ -64,6 +64,40 @@ php spark serve
 
   ![Page ABout setelah CSS ](Dokumentasi/about-css.png)
 
+
+  ### 🧱 Praktikum 2:CRUD
+
+  - Menambahkan Database
+
+![Membuat Database untuk artikel ](Dokumentasi/database.png)
+
+- Menambahkan Page Artikel
+
+![Membuat Page untuk artikel ](Dokumentasi/page-artikel.png)
+
+- Menambahkan Page detail Artikel
+
+![Membuat Page detail untuk artikel ](Dokumentasi/page-detail-artikel.png)
+
+- Menambahkan Page Isi Artikel
+
+![Membuat Page Isi untuk artikel ](Dokumentasi/page-isi-artikel.png)
+
+- Menambahkan Page detail Artikel
+
+![Membuat Page detail untuk artikel ](Dokumentasi/page-detail-artikel.png)
+
+- Menambahkan Page Admin Artikel
+
+![Membuat Page Admin untuk artikel ](Dokumentasi/page-admin-artikel.png)
+
+- Menambahkan Page detail Artikel
+
+![Membuat Page edit untuk artikel ](Dokumentasi/page-edit-artikel.png)
+
+- Menambahkan Page detail Artikel
+
+![Membuat Page tambah untuk artikel ](Dokumentasi/page-artikel.png)
 =======
 # Lab7Web
 Tugas Praktikum Pemrogaman Web2 
