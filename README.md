@@ -93,7 +93,7 @@ php spark serve
 
 - Menambahkan Page tambah/add Artikel
 
-![Membuat Page tambah untuk artikel ](Dokumentasi/page-artikel.png)
+![Membuat Page tambah untuk artikel ](Dokumentasi/tambah-artikel.png)
 =======
 # Lab7Web
 Tugas Praktikum Pemrogaman Web2 
