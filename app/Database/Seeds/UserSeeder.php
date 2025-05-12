@@ -12,7 +12,7 @@ class UserSeeder extends Seeder
         $model->insert([
             'username' => 'admin',
             'useremail' => 'admin@email.com',
-            'userpassword' => password_hash('admin123', PASSWORD_DEFAULT),
+            'userpassword' => password_hash('123', PASSWORD_DEFAULT),
         ]);
     }
 }
