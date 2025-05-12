@@ -122,6 +122,15 @@ View Layout memungkinkan pengembang untuk mendefinisikan kerangka dasar (layout)
   - Biasanya bergantung pada data yang dikirimkan dari controller utama.
   - Tidak memiliki logika terpisah seperti View Cell.
 
+  ## Pratikum 4: Modul Login
+
+- Membuat page login
+
+![Membuat Page login ](Dokumentasi/membuat-page-login.png)
+
+- User Membutukan login saat masuk ke page artikel
+
+![Page login saat masuk ke page artikel ](Dokumentasi/page-artikel-user-login.png)
 # Lab7Web
 Tugas Praktikum Pemrogaman Web2 
 >>>>>>> f83c8fd3cc803144ad2df9967199433ed2f9255c
