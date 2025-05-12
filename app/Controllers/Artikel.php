@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\ArtikelModel;
+use CodeIgniter\Exceptions\PageNotFoundException;
 
 class Artikel extends BaseController
 {
@@ -49,11 +50,14 @@ class Artikel extends BaseController
         $validation->setRules(['judul' => 'required']);
         $isDataValid = $validation->withRequest($this->request)->run();
         if ($isDataValid) {
+            $file = $this->request->getFile('gambar');
+            $file->move(ROOTPATH . 'public/gambar');
             $artikel = new ArtikelModel();
             $artikel->insert([
                 'judul' => $this->request->getPost('judul'),
                 'isi' => $this->request->getPost('isi'),
                 'slug' => url_title($this->request->getPost('judul')),
+                'gambar' => $file->getName(),
             ]);
             return redirect('admin/artikel');
         }

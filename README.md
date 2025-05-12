@@ -141,6 +141,12 @@ View Layout memungkinkan pengembang untuk mendefinisikan kerangka dasar (layout)
 - Membuat Pencarian
 
 ![Membuat Pencarian ](Dokumentasi/membuat-pencarian.png)
+
+## Pratikum 6: Upload File Gambar
+
+- Membuat Upload File Gambar
+
+![Membuat Upload File Gambar ](Dokumentasi/upload-gambar.png)
 # Lab7Web
 Tugas Praktikum Pemrogaman Web2 
 >>>>>>> f83c8fd3cc803144ad2df9967199433ed2f9255c
