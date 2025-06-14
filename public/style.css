@@ -173,3 +173,24 @@ footer {
 .entry .right-img {
     float: right;
 }
+.filter-kategori {
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-left: 4px solid #3498db;
+    border-radius: 5px;
+    max-width: 400px;
+}
+
+.filter-kategori label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.kategori-dropdown {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 1rem;
+}

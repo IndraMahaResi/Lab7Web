@@ -44,7 +44,7 @@
             </aside>
         </section>
         <footer>
-            <p>&copy; 2021 - Universitas Pelita Bangsa</p>
+            <p>&copy; 2025 - Universitas Pelita Bangsa (Indra Maha Resi)</p>
         </footer>
     </div>
 </body>

@@ -6,14 +6,20 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 $routes->setAutoRoute(true);
+
 $routes->get('/', 'Home::home');
 $routes->get('/about', 'Page::about');
 $routes->get('/contact', 'Page::contact');
 $routes->get('/faqs', 'Page::faqs');
-$routes->get('/artikel/(:any)', 'Artikel::view/$1');
-$routes->group('admin',['filter' => 'auth'], function ($routes) {
+
+// Rute admin (dengan filter auth)
+$routes->group('admin', ['filter' => 'auth'], function ($routes) {
     $routes->get('artikel', 'Artikel::admin_index');
     $routes->add('artikel/add', 'Artikel::add');
     $routes->add('artikel/edit/(:any)', 'Artikel::edit/$1');
     $routes->get('artikel/delete/(:any)', 'Artikel::delete/$1');
-    });
+});
+
+// PENTING: Rute ini dipindah ke bawah agar tidak menimpa artikel/add
+$routes->get('/artikel/(:any)', 'Artikel::view/$1');
+$routes->get('/kategori/(:segment)', 'Artikel::kategori/$1');
