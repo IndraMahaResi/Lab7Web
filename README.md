@@ -157,6 +157,15 @@ View Layout memungkinkan pengembang untuk mendefinisikan kerangka dasar (layout)
 - Membuat Relasi Tabel Artikel dengan Kategori
 ![Membuat Relasi Tabel Artikel dengan Kategori ](Dokumentasi/daftar_kategori.png)
 
+## Pratikum : AJAX 
+
+- Membuat Data Artikel dengan AJAX
+![Membuat Data Artikel dengan AJAX ](Dokumentasi/ajax-artikel.png)
+
+
+- Mencoba Edit Data Artikel dengan AJAX
+![Mencoba Edit Data Artikel dengan AJAX ](Dokumentasi/ajax-edit-artikel.png)
+
 
 # Lab7Web
 Tugas Praktikum Pemrogaman Web2 

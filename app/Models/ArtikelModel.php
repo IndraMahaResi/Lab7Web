@@ -31,3 +31,5 @@ artikel.id_kategori')
             ->getResultArray();
     }
 }
+
+
