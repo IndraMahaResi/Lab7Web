@@ -6,8 +6,11 @@
     <div class="row mb-3">
         <div class="col-md-8">
             <form id="search-form" class="d-flex align-items-center">
+                <label for="search-box" class="visually-hidden">Cari Judul Artikel</label> <!-- Label untuk input pencarian -->
                 <input type="text" name="q" id="search-box" value="<?= esc($q); ?>"
                     placeholder="Cari judul artikel..." class="form-control me-2 flex-grow-1">
+                
+                <label for="category-filter" class="me-2 mb-0">Kategori:</label> <!-- Label untuk select filter kategori -->
                 <select name="kategori_id" id="category-filter" class="form-select me-2">
                     <option value="">Semua Kategori</option>
                     <?php foreach ($kategori as $k): ?>
@@ -57,11 +60,9 @@
         const categoryFilter = $('#category-filter');
         const loadingIndicator = $('#loading-indicator');
 
-        // Variabel untuk menyimpan status sorting saat ini
         let currentSortBy = '<?= esc($sort_by); ?>';
         let currentSortOrder = '<?= esc($sort_order); ?>';
 
-        // Fungsi untuk memuat data dari server menggunakan AJAX
         const fetchData = (url) => {
             loadingIndicator.show();
             articleContainer.empty();
@@ -77,7 +78,7 @@
                 success: function(response) {
                     loadingIndicator.hide();
                     renderArticles(response.artikel);
-                    renderPagination(response.pager, response.q, response.kategori_id, response.sort_by, response.sort_order); // Meneruskan sorting params
+                    renderPagination(response.pager, response.q, response.kategori_id, response.sort_by, response.sort_order);
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                     loadingIndicator.hide();
@@ -88,19 +89,14 @@
             });
         };
 
-        // Fungsi untuk merender daftar artikel ke HTML tabel
         const renderArticles = (articles) => {
             let html = '<div class="table-responsive"><table class="table table-hover table-striped table-bordered">';
             html += '<thead class="table-dark">';
             html += '<tr>';
-            // Kolom ID (bisa diurutkan)
             html += '<th class="sortable" data-sort-by="artikel.id">ID ' + getSortIcon('artikel.id') + '</th>';
-            // Kolom Judul (bisa diurutkan)
             html += '<th class="sortable" data-sort-by="artikel.judul">Judul ' + getSortIcon('artikel.judul') + '</th>';
-            // Kolom Kategori (bisa diurutkan)
             html += '<th class="sortable" data-sort-by="kategori.nama_kategori">Kategori ' + getSortIcon('kategori.nama_kategori') + '</th>';
             html += '<th>Gambar</th>';
-            // Kolom Status (bisa diurutkan)
             html += '<th class="sortable" data-sort-by="artikel.status">Status ' + getSortIcon('artikel.status') + '</th>';
             html += '<th>Aksi</th>';
             html += '</tr>';
@@ -139,7 +135,6 @@
             html += '</tbody></table></div>';
             articleContainer.html(html);
 
-            // Tambahkan event listener untuk header yang sortable setelah dirender
             $('.sortable').on('click', function() {
                 const sortBy = $(this).data('sort-by');
                 let sortOrder = 'asc';
@@ -151,31 +146,24 @@
 
                 const qVal = searchBox.val();
                 const kategoriIdVal = categoryFilter.val();
-                // Selalu mulai dari halaman 1 saat melakukan sorting baru
                 fetchData(`${adminArtikelBaseUrl}?q=${qVal}&kategori_id=${kategoriIdVal}&sort_by=${currentSortBy}&sort_order=${currentSortOrder}&page=1`);
             });
         };
 
-        // Fungsi untuk mendapatkan ikon sorting (▲/▼)
         const getSortIcon = (sortByColumn) => {
             if (sortByColumn === currentSortBy) {
-                return currentSortOrder === 'asc' ? '<span class="ms-1">&#9650;</span>' : '<span class="ms-1">&#9660;</span>'; // Panah atas/bawah
+                return currentSortOrder === 'asc' ? '<span class="ms-1">&#9650;</span>' : '<span class="ms-1">&#9660;</span>';
             }
-            return '<span class="ms-1 text-muted">&#9660;&#9650;</span>'; // Ikon abu-abu untuk belum aktif
+            return '<span class="ms-1 text-muted">&#9660;&#9650;</span>';
         };
 
-
-        // Fungsi untuk merender pagination ke HTML
         const renderPagination = (pager, q, kategori_id, sort_by, sort_order) => {
             let html = '<nav><ul class="pagination">';
             
-            // Logika untuk selalu menampilkan pagination, meskipun hanya 1 halaman
             if (pager && pager.pageCount === 1 && pager.total > 0) {
-                // Jika hanya ada 1 halaman tapi ada data, tampilkan hanya tombol halaman 1
                 html += `<li class="page-item active"><a class="page-link" href="#">1</a></li>`;
             } else if (pager && pager.links && pager.links.length > 0) {
                 pager.links.forEach(link => {
-                    // Pastikan URL pagination sudah mengandung parameter q, kategori_id, sort_by, dan sort_order
                     let pageUrl = link.url ? `${link.url}&q=${q || ''}&kategori_id=${kategori_id || ''}&sort_by=${sort_by || 'artikel.id'}&sort_order=${sort_order || 'desc'}` : '#';
                     html += `<li class="page-item ${link.active ? 'active' : ''}"><a class="page-link" href="${pageUrl}">${link.title}</a></li>`;
                 });
@@ -183,7 +171,6 @@
             html += '</ul></nav>';
             paginationContainer.html(html);
 
-            // Tambahkan event listener untuk link pagination yang baru dibuat
             paginationContainer.find('.page-link').on('click', function(e) {
                 e.preventDefault();
                 let pageUrl = $(this).attr('href');
@@ -193,7 +180,6 @@
             });
         };
 
-        // Fungsi helper untuk escaping HTML (mencegah XSS)
         function escapeHtml(text) {
             var map = {
                 '&': '&amp;',
@@ -205,21 +191,17 @@
             return text.replace(/[&<>"']/g, function(m) { return map[m]; });
         }
 
-        // Event listener untuk submit form pencarian
         searchForm.on('submit', function(e) {
             e.preventDefault();
             const qVal = searchBox.val();
             const kategoriIdVal = categoryFilter.val();
-            // Selalu mulai dari halaman 1 saat melakukan pencarian atau filter baru
             fetchData(`${adminArtikelBaseUrl}?q=${qVal}&kategori_id=${kategoriIdVal}&sort_by=${currentSortBy}&sort_order=${currentSortOrder}&page=1`);
         });
 
-        // Event listener untuk perubahan filter kategori (langsung trigger search)
         categoryFilter.on('change', function() {
             searchForm.trigger('submit');
         });
 
-        // Panggil fungsi fetchData saat halaman pertama kali dimuat
         fetchData(`${adminArtikelBaseUrl}?q=<?= esc($q) ?>&kategori_id=<?= esc($kategori_id) ?>&sort_by=<?= esc($sort_by) ?>&sort_order=<?= esc($sort_order) ?>&page=1`);
     });
 </script>
