@@ -72,34 +72,58 @@ class Artikel extends BaseController
 
     public function admin_index()
     {
-        $artikelModel = new ArtikelModel();
+       $artikelModel = new ArtikelModel();
         $kategoriModel = new KategoriModel();
 
+        $title = 'Manajemen Artikel';
+
+        // Ambil parameter pencarian, filter kategori, nomor halaman
         $q = $this->request->getVar('q');
         $kategori_id = $this->request->getVar('kategori_id');
+        $page = $this->request->getVar('page') ?? 1;
 
-        $builder = $artikelModel
-            ->select('artikel.*, kategori.nama_kategori')
-            ->join('kategori', 'kategori.id_kategori = artikel.id_kategori');
+        // --- Parameter Sorting ---
+        $sort_by = $this->request->getVar('sort_by') ?? 'artikel.id'; // Default sort by ID
+        $sort_order = $this->request->getVar('sort_order') ?? 'desc'; // Default order DESC
 
+        $builder = $artikelModel->select('artikel.*, kategori.nama_kategori')
+                                ->join('kategori', 'kategori.id_kategori = artikel.id_kategori');
+
+        // Terapkan filter pencarian
         if (!empty($q)) {
             $builder->like('artikel.judul', $q);
         }
 
+        // Terapkan filter kategori
         if (!empty($kategori_id)) {
             $builder->where('artikel.id_kategori', $kategori_id);
         }
 
+        // --- Terapkan Sorting ---
+        // Pastikan kolom yang diurutkan sesuai dengan nama kolom di DB
+        $builder->orderBy($sort_by, $sort_order);
+
+        // Dapatkan data artikel dengan pagination
+        $artikel = $builder->paginate(10, 'default', $page);
+        $pager = $artikelModel->pager;
+
         $data = [
-            'title' => 'Manajemen Artikel',
-            'artikel' => $builder->paginate(10),
-            'pager' => $artikelModel->pager,
+            'title' => $title,
+            'artikel' => $artikel,
+            'pager' => $pager,
             'q' => $q,
             'kategori_id' => $kategori_id,
-            'kategori' => $kategoriModel->findAll(),
+            'sort_by' => $sort_by,    // Kirim parameter sorting ke view
+            'sort_order' => $sort_order // Kirim parameter sorting ke view
         ];
 
-        return view('artikel/admin_index', $data);
+        // Cek apakah request datang dari AJAX
+        if ($this->request->isAJAX()) {
+            return $this->response->setJSON($data);
+        } else {
+            $data['kategori'] = $kategoriModel->findAll();
+            return view('artikel/admin_index', $data);
+        }
     }
 
     public function kategori($slug_kategori)

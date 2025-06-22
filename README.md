@@ -157,7 +157,7 @@ View Layout memungkinkan pengembang untuk mendefinisikan kerangka dasar (layout)
 - Membuat Relasi Tabel Artikel dengan Kategori
 ![Membuat Relasi Tabel Artikel dengan Kategori ](Dokumentasi/daftar_kategori.png)
 
-## Pratikum : AJAX 
+## Pratikum 8 : AJAX 
 
 - Membuat Data Artikel dengan AJAX
 ![Membuat Data Artikel dengan AJAX ](Dokumentasi/ajax-artikel.png)
@@ -166,6 +166,10 @@ View Layout memungkinkan pengembang untuk mendefinisikan kerangka dasar (layout)
 - Mencoba Edit Data Artikel dengan AJAX
 ![Mencoba Edit Data Artikel dengan AJAX ](Dokumentasi/ajax-edit-artikel.png)
 
+## Pratikum 9 : Implementasi AJAX Pagination dan Pencarian/Search 
+
+- Membuat Pagination, Pencarian/Search, Filter Sorting dengan AJAX 
+![Membuat Pagination, Pencarian/Search, Filter Sorting dengan AJAX ](Dokumentasi/ajax-pagination.png)
 
 # Lab7Web
 Tugas Praktikum Pemrogaman Web2 
