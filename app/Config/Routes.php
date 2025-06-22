@@ -5,6 +5,7 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
+$routes->resource('post');
 $routes->setAutoRoute(true);
 
 $routes->get('/', 'Home::home');

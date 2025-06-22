@@ -171,6 +171,29 @@ View Layout memungkinkan pengembang untuk mendefinisikan kerangka dasar (layout)
 - Membuat Pagination, Pencarian/Search, Filter Sorting dengan AJAX 
 ![Membuat Pagination, Pencarian/Search, Filter Sorting dengan AJAX ](Dokumentasi/ajax-pagination.png)
 
+
+## Pratikum 10: API
+- Menampilkan semua data dengan method GET
+![Menampilkan semua data dengan method GET ](Dokumentasi/GET-ARTIKEL.png)
+
+- Menampilkan data berdasarkan ID dengan method GET
+![Menampilkan data berdasarkan ID dengan method GET ](Dokumentasi/GET-ID.png)
+
+- Mengupdate data dengan method PUT
+![Mengupdate data dengan method PUT ](Dokumentasi/PUT-ID.png)
+![Mengupdate data dengan method PUT BERHASIL ](Dokumentasi/PUT-DONE.png)
+![Mengupdate data dengan method PUT BERHASIL ](Dokumentasi/WEB-PUT.png)
+
+- Menambahkan data dengan method POST
+![Menambahkan data dengan method POST ](Dokumentasi/POST.png)
+![Menambahkan data dengan method POST BERHASIL ](Dokumentasi/POST-DONE.png)
+
+- Menghapus data dengan method DELETE
+![Menghapus data dengan method DELETE ](Dokumentasi/DELETE.png)
+![Menghapus data dengan method DELETE BERHASIL ](Dokumentasi/DELETE-DONE.png)
+
+
+
 # Lab7Web
 Tugas Praktikum Pemrogaman Web2 
 >>>>>>> f83c8fd3cc803144ad2df9967199433ed2f9255c

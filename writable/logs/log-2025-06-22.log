@@ -79,3 +79,47 @@ DEBUG - 2025-06-22 18:51:36 --> Session: Class initialized using 'CodeIgniter\Se
 DEBUG - 2025-06-22 18:51:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-06-22 18:51:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-06-22 18:51:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-22 19:27:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-22 19:27:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-22 19:30:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-06-22 19:30:23 --> mysqli_sql_exception: Can't change size of file (Errcode: 28 "No space left on device") in C:\xampp\htdocs\lab11_ci\Lab7Web\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\lab11_ci\Lab7Web\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `artikel...', 0)
+#1 C:\xampp\htdocs\lab11_ci\Lab7Web\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `artikel...')
+#2 C:\xampp\htdocs\lab11_ci\Lab7Web\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `artikel...')
+#3 C:\xampp\htdocs\lab11_ci\Lab7Web\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `artikel...', Array, false)
+#4 C:\xampp\htdocs\lab11_ci\Lab7Web\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\lab11_ci\Lab7Web\system\BaseModel.php(679): CodeIgniter\Model->doFindAll(10, 0)
+#6 C:\xampp\htdocs\lab11_ci\Lab7Web\system\BaseModel.php(1291): CodeIgniter\BaseModel->findAll(10, 0)
+#7 C:\xampp\htdocs\lab11_ci\Lab7Web\app\Controllers\Artikel.php(107): CodeIgniter\BaseModel->paginate(10, 'default', 1)
+#8 C:\xampp\htdocs\lab11_ci\Lab7Web\system\CodeIgniter.php(933): App\Controllers\Artikel->admin_index()
+#9 C:\xampp\htdocs\lab11_ci\Lab7Web\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+#10 C:\xampp\htdocs\lab11_ci\Lab7Web\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\lab11_ci\Lab7Web\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\lab11_ci\Lab7Web\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\lab11_ci\Lab7Web\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\lab11_ci\Lab7Web\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-06-22 19:30:23 --> CodeIgniter\Database\Exceptions\DatabaseException: Can't change size of file (Errcode: 28 "No space left on device")
+[Method: GET, Route: admin/artikel]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `artikel`.*, `kategori`.`nama_kategori`
+FROM `artikel`
+JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+ORDER BY `artikel`.`id` DESC
+ LIMIT 10', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(10, 0)
+ 4 SYSTEMPATH\BaseModel.php(1291): CodeIgniter\BaseModel->findAll(10, 0)
+ 5 APPPATH\Controllers\Artikel.php(107): CodeIgniter\BaseModel->paginate(10, 'default', 1)
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->admin_index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\Lab7Web\\public\\index.php')
+DEBUG - 2025-06-22 19:30:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-22 19:30:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-22 19:30:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-22 19:30:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
